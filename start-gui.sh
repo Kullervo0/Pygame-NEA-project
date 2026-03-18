@@ -37,7 +37,7 @@ sudo apt-get update -y
 sudo apt-get install -y xvfb x11vnc fluxbox websockify novnc
 
 echo "🖥️ STEP 3: Starting virtual display server (Xvfb)..."
-Xvfb :1 -screen 0 800x600x24 &
+Xvfb :1 -screen 0 850x650x24 &
 export DISPLAY=:1
 sleep 2
 
