@@ -1,5 +1,7 @@
 import pygame
 import sys
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 pygame.init()
 pygame.font.init()
@@ -24,17 +26,12 @@ WHITE = 255, 255, 255
 clock = pygame.time.Clock()
 running = True
 
-HealthBar = pygame.image.load("/workspaces/Pygame-NEA-project/game_files/Health.png")
-
-Fight = pygame.image.load("/workspaces/Pygame-NEA-project/game_files/FightDeselected.png")
-
-Act = pygame.image.load("/workspaces/Pygame-NEA-project/game_files/ActSelected.png")
-
-Item = pygame.image.load("/workspaces/Pygame-NEA-project/game_files/ItemDeselected.png")
-
-Spare = pygame.image.load("/workspaces/Pygame-NEA-project/game_files/SpareDeselected.png")
-
-Heart = pygame.image.load("/workspaces/Pygame-NEA-project/game_files/Heart.png")
+HealthBar = pygame.image.load(os.path.join(BASE_DIR, "Health.png"))
+Fight = pygame.image.load(os.path.join(BASE_DIR, "FightDeselected.png"))
+Act = pygame.image.load(os.path.join(BASE_DIR, "ActSelected.png"))
+Item = pygame.image.load(os.path.join(BASE_DIR, "ItemDeselected.png"))
+Spare = pygame.image.load(os.path.join(BASE_DIR, "SpareDeselected.png"))
+Heart = pygame.image.load(os.path.join(BASE_DIR, "Heart.png"))
 
 heightTest = 50
 HeightTest1 = 538
