@@ -11,7 +11,7 @@ screenHeightY = 600
 
 BattleBoxLengthX = 0
 
-BattleState = False
+dodgingState = True
 
 screen = pygame.display.set_mode((screenLengthX, screenHeightY))
 surface = screen
@@ -43,7 +43,6 @@ playerBodyLocationY = 340
 def gameOver():
     pass
 
-dodgingState = False
 
 def Bullet():
     pass
@@ -60,12 +59,18 @@ while running == True:
     screen.blit(Item, (460,538))
     screen.blit(Spare, (575,538))
 
-    screen.blit(HealthBar, (345,503,110,80))
+    screen.blit(HealthBar, (345,503))
     playerHealth = max(0, playerHealth)
     playerHealth = min(20, playerHealth)
     lostHealth = (20-playerHealth)
-    
     pygame.draw.rect(surface, BLACK, ((440-(lostHealth*4)), 549, (4*lostHealth), 24))
+
+    if dodgingState == True:
+        pygame.draw.rect(surface, (0,100,0), (35,35,35,35))
+    elif dodgingState == False:
+        pygame.draw.rect(surface, (100,0,0), (35,35,35,35))
+
+        
 
     pygame.display.flip()
     clock.tick(30)
@@ -94,9 +99,9 @@ while running == True:
                     pass
 
 
-            if event.key ==  pygame.K_x:
-                BattleState = not BattleState
-                print("X was presssed")
+            if event.key ==  pygame.K_t:
+                dodgingState = not dodgingState
+                print("T was presssed")
 
             if event.key == pygame.K_n:
                 playerHealth -= 1
