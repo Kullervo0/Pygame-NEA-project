@@ -1,3 +1,15 @@
+ignore the readme its not that important, its just a backup for the start code for getting a virtual screen when running on codespaces 
+
+########################################################################
+
+
+
+
+
+
+
+
+
 #!/usr/bin/env bash
 set -e
 
