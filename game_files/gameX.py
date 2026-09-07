@@ -45,6 +45,7 @@ def gameOver():
 
 
 def Bullet():
+    
     pass
 
 movementSpeedIncrement = 3
