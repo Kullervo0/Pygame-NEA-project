@@ -14,13 +14,33 @@ BLACK = 0, 0, 0
 WHITE = 255, 255, 255
 
 player_heart_location = pygame.Vector2(600,450)
-
-
 player_heart = pygame.image.load("game_files/player_heart.png")
-fight = pygame.image.load("game_files/FINAL FIGHT.png")
-action = pygame.image.load("game_files/FINAL ACTION.png")
-item = pygame.image.load("game_files/FINAL ITEM.png")
-spare = pygame.image.load("game_files/FINAL SPARE.png")
+
+health_bar = pygame.image.load("game_files/Health bar.png")
+
+GUI_Buttons = {
+     "fight":{
+          "unselected": pygame.image.load("game_files/FINAL FIGHT UNSELECTED.png"),
+          "selected": pygame.image.load("game_files/FINAL FIGHT.png")
+     },
+
+     "action":{
+          "unselected": pygame.image.load("game_files/FINAL ACTION UNSELECTED.png"),
+          "selected": pygame.image.load("game_files/FINAL ACTION.png")
+     },
+
+     "item":{
+          "unselected": pygame.image.load("game_files/FINAL ITEM UNSELECTED.png"),
+          "selected": pygame.image.load("game_files/FINAL ITEM.png")
+     },
+
+     "spare":{
+          "unselected": pygame.image.load("game_files/FINAL SPARE UNSELECTED.png"),
+          "selected": pygame.image.load("game_files/FINAL SPARE.png")
+     }
+}
+
+
 
                                  
 FPS = 30
@@ -28,19 +48,14 @@ FPS = 30
 while running == True:
 
     surface.fill(BLACK)
-    pygame.draw.rect(surface, WHITE, (10, 530, 240, 120), 0)
-    gameScreen.blit(fight,(10,530))
-    pygame.draw.rect(surface, WHITE, (260, 530, 240, 120), 0)
-    gameScreen.blit(action,(260,530))
-    pygame.draw.rect(surface, WHITE, (510, 510, 180, 140), 0)
-    #gameScreen.blit(fight,(,530))
-    pygame.draw.rect(surface, WHITE, (700, 530, 240, 120), 0)
-    gameScreen.blit(item,(700,530))
-    pygame.draw.rect(surface, WHITE, (950, 530, 240, 120), 0)
-    gameScreen.blit(spare,(950,530))
-    gameScreen.blit(player_heart,(player_heart_location))
-    
+    gameScreen.blit(GUI_Buttons["fight"]["unselected"], (0,530))
+    gameScreen.blit(GUI_Buttons["action"]["unselected"], (250,530))
+    gameScreen.blit(health_bar, (500,530))
+    gameScreen.blit(GUI_Buttons["item"]["unselected"], (710,530))
+    gameScreen.blit(GUI_Buttons["spare"]["unselected"], (960,530))
 
+    
+    
     pygame.display.flip()
     clock.tick(FPS)
 
