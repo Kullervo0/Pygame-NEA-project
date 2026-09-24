@@ -1,0 +1,29 @@
+{
+    "intro": [
+        "Im gonna steal your soul!"
+    ],
+    "fight":{
+        "prehit": [
+            "You ball your fist",
+            "You steady your stance",
+            "You crack your knuckles"
+        ],
+
+        "posthit":{
+            "high damage":[
+                "You hit their nose! CRITICAL DAMAGE",
+                "You land a punch to their kidney! CRITICAL DAMAGE"
+            ],
+            "low damage":[
+                "You barely clipped them",
+                "Your punch was barely felt",
+                "You whiffed your shot"
+            ],
+            "kill hit":[
+                "Your hand goes straight through his chest!",
+                "Your hand knocks his jaw off his face!",
+                "Your fist renders them unconscious !"
+            ]
+        }
+    }
+}
